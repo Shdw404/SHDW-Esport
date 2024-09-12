@@ -1,0 +1,614 @@
+/* RESET CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background-color: #0f0f0f;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Empêche les barres de défilement */
+}
+
+/* Snowflakes */
+#snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Permet de cliquer à travers les flocons */
+  overflow: hidden;
+  z-index: 9999; /* Assure que les flocons sont au-dessus des autres éléments */
+}
+
+.snowflake {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: none;
+  user-select: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+}
+
+/* Taille et animation des flocons */
+.snowflake:nth-of-type(1) { width: 5px; height: 5px; }
+.snowflake:nth-of-type(2) { width: 7px; height: 7px; }
+.snowflake:nth-of-type(3) { width: 9px; height: 9px; }
+.snowflake:nth-of-type(4) { width: 6px; height: 6px; }
+.snowflake:nth-of-type(5) { width: 8px; height: 8px; }
+
+/* Animation des flocons de neige */
+@keyframes snowfall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+.snowflake {
+  animation: snowfall linear infinite;
+}
+
+@keyframes snowflakes {
+  0% { transform: translateY(-100vh); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Taille et animation des flocons */
+.snowflake:nth-of-type(1) {
+  animation-duration: 10s;
+  animation-delay: 0s;
+}
+
+.snowflake:nth-of-type(2) {
+  animation-duration: 12s;
+  animation-delay: 2s;
+}
+
+.snowflake:nth-of-type(3) {
+  animation-duration: 14s;
+  animation-delay: 4s;
+}
+
+.snowflake:nth-of-type(4) {
+  animation-duration: 16s;
+  animation-delay: 6s;
+}
+
+.snowflake:nth-of-type(5) {
+  animation-duration: 18s;
+  animation-delay: 8s;
+}
+
+/* Header, Footer, and Main Content Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #121212;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f00;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: #f00;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url('img/bg-hero.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #f00;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: scale(1.1);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.product-card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  margin: 20px 0 10px;
+}
+
+.product-card p {
+  margin-bottom: 15px;
+  color: #f00;
+  font-size: 20px;
+}
+
+.product-card .btn {
+  background-color: #f00;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.product-card .btn:hover {
+  transform: scale(1.1);
+}
+
+/* Keyframes pour les animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  background-color: #121212;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  margin-top: auto; /* S'assure que le footer reste tout en bas */
+}
+/* Agrandir les descriptions des produits */
+.manchette-item p {
+    font-size: 22px; /* Augmenter la taille de la police */
+    margin-bottom: 20px; /* Espacement augmenté */
+  }
+/* Styles pour la Page d'Administration */
+.admin {
+    padding: 40px;
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  .admin h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .admin-panel {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .admin-panel form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .admin-panel label {
+    margin: 10px 0 5px;
+  }
+  
+  .admin-panel input, 
+  .admin-panel textarea {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+  
+  .admin-panel button {
+    background-color: #f00;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .admin-panel button:hover {
+    background-color: #d00;
+  }
+/* Styles pour la Page des Clips */
+.clips {
+    padding: 40px;
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  .clips h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .clip-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .clip-form label {
+    margin: 10px 0 5px;
+  }
+  
+  .clip-form input, 
+  .clip-form textarea {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+  
+  .clip-form button {
+    background-color: #f00;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .clip-form button:hover {
+    background-color: #d00;
+  }
+  
+  .clip-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .clip-item {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .clip-item video {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .clip-item p {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+/* Styles pour la Page des Clips */
+.clips {
+    padding: 40px;
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  .clips h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .clip-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .clip-form label {
+    margin: 10px 0 5px;
+  }
+  
+  .clip-form input, 
+  .clip-form textarea {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+  
+  .clip-form button {
+    background-color: #f00;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .clip-form button:hover {
+    background-color: #d00;
+  }
+  
+  .clip-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .clip-item {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .clip-item video {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .clip-item p {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+/* Styles pour la Page de l'Équipe */
+.team {
+    padding: 40px;
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .team h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .team-photo img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 40px;
+  }
+  
+  .team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .member {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .member img {
+    max-width: 100%;
+    border-radius: 50%;
+  }
+  
+  .member p {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+/* Assurez-vous que le défilement est autorisé */
+body {
+    overflow-y: auto; /* Permet le défilement vertical */
+  }
+  
+  /* Autres styles pour vérifier */
+  html, body {
+    height: 100%;
+  }
+  
+  #home, .clips, .team {
+    padding: 40px;
+    background-color: #121212;
+  }
+/* Styles pour la Page de Contact */
+.contact {
+    padding: 40px;
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  .contact h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .contact-info, .contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+  }
+  
+  .contact-info h2, .contact-form h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  .contact-info p {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  .contact-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 18px;
+  }
+  
+  .contact-form input, 
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+  
+  .contact-form button {
+    background-color: #f00;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .contact-form button:hover {
+    background-color: #d00;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+  }
+  /* Styles pour la Page À propos */
+.about {
+    padding: 40px;
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  .about h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .about .history, .about .team, .about .values {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .about .history h2, .about .team h2, .about .values h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  .about .history p, .about .values ul {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .about .team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .about .team-member {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .about .team-member img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .about .team-member h3 {
+    margin: 10px 0;
+    font-size: 24px;
+  }
+  
+  .about .team-member p {
+    font-size: 18px;
+    color: #f00;
+  }
+  
+  .about .values ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about .values ul li {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .about .values ul li strong {
+    color: #f00;
+  }
+  
